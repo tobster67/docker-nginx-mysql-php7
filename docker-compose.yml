@@ -6,11 +6,11 @@ services:
         tty: true
         ports:
             - "3306:3306"
-            - "81:81"
+            - "8080:80"
             - "9000:9000"
         volumes:
-            - mysql:/var/lib/mysql
-            - /home/vagrant/Documents/www:/var/www/html
+            - mysql:/var/lib/m~ysql
+            - ~/Documents/www:/var/www/html
             - ./image/config/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
         environment:
             - DB_NAME=wpeike
