@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+    dev:
+        image: tobster67/mysql-php7
+        tty: true
+        ports:
+            - "3306:3306"
+            - "81:81"
+            - "9000:9000"
+        volumes:
+            - mysql:/var/lib/mysql
+            - /home/vagrant/Documents/www:/var/www/html
+            - ./image/config/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+        environment:
+            - DB_NAME=wpeike
+            - DB_USER=wpeike
+            - DB_PASS=wpeike
+volumes:
+  mysql:
+    driver: local
